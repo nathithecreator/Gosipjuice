@@ -1,0 +1,12 @@
+.container{
+  margin-top: auto; 
+  margin-bottom: -200px;
+}
+
+.card-img-top{
+  cursor: pointer;
+}
+
+.card-title{
+  cursor: pointer;
+}

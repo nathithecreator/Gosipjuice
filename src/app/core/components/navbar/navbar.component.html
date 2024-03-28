@@ -1,0 +1,58 @@
+<div class="navbar navbar-expand-lg bg-black" 
+style="z-index: 100; border-radius: 10px; padding-left: 20px; padding-right: 20px; margin-left: 60px; margin-right: 60px;  margin-top: 20px;">
+  <div class="logosComponent">
+    <img src="assets/images/logo.png" alt="logoimage" class="logoimage"> 
+    <a href="#" class="logo" style="margin-bottom: 10px; color: white;">GoSipJuice</a>
+  </div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      
+
+      <ng-container *ngIf="user !== undefined && user?.roles?.includes('Writer')">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+          Admin
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/admin/Categories/" type="button">Categories</a></li>
+
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" routerLink="/admin/blogposts/" type="button">BlogPosts</a></li>
+          
+        </ul>
+      </li>
+    </ng-container>
+
+    </ul>
+
+    <div class="d-flex">
+      <ng-container *ngIf="user === undefined;else showLogout">
+
+      <li class="nav-item" style="margin-right: 300px;">
+        <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">Fashion</a>
+        <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">Technology</a>
+        <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">Cars</a>
+        <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">News</a>
+      </li>
+
+      <a routerLink="/login" class="btn btn-primary">Login</a>
+      </ng-container>
+
+      <ng-template #showLogout>
+        <div class="d-flex align-items-center"> 
+          <li class="nav-item" style="margin-right: 200px;">
+            <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">Fashion</a>
+            <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">Technology</a>
+            <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">Cars</a>
+            <a class="nav-link active" aria-current="page" style="color: white; padding: 5px;" href="#">News</a>
+          </li>
+          <span>{{user?.email}}</span>
+          <button class="btn btn-primary ms-3" (click)="onLogout()">Logout</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

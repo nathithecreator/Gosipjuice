@@ -1,0 +1,53 @@
+.navbar navbar-expand-lg bg-black{
+  color: white;
+  background-color: rgb(184, 184, 184);
+  z-index: 50;
+  width: 300vw; /* Make the container full width */
+  height: 77px;
+
+}
+
+.nav-item{
+  color: white;
+}
+
+.nav-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  justify-content: center;
+  color: #fff;
+}
+
+
+.nav-item li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #ddd; 
+}
+
+.logoimage{
+  width: 40px;
+  height: 40px;
+}
+
+.logo {
+  font-size: 27px;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  margin-left: 10px; /* Adjust spacing between logo and text */
+  vertical-align: middle; /* Align text vertically with logo */
+  margin-top: 5px;
+  padding: 5px;
+}
+
